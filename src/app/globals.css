@@ -4,6 +4,8 @@
   /* body */
   --background: #08090a;
   --foreground: #d0d6e0;
+  /* primary */
+  --primary: var(--color-lime-600);
   /* navbar */
   --header-height: 64px;
   --header-blur: 20px;
@@ -13,6 +15,7 @@
 
 @theme {
   --color-thin: var(--header-bg);
+  --color-primary: var(--color-lime-600);
   --color-thin-border: var(--header-border);
   --color-thin-border-70: color-mix(
     in oklab,
