@@ -11,6 +11,21 @@
   --header-border: hsla(0, 0%, 100%, 0.08);
 }
 
+@theme {
+  --color-thin: var(--header-bg);
+  --color-thin-border: var(--header-border);
+  --color-thin-border-70: color-mix(
+    in oklab,
+    var(--color-thin-border) /* var(--header-border) */ 50%,
+    transparent
+  );
+
+  --color-outline: color-mix(
+    in oklab,
+    var(--color-white) /* #fff = #ffffff */ 40%,
+    transparent
+  );
+}
 body {
   background: var(--background);
   color: var(--foreground);
@@ -42,4 +57,24 @@ body {
 
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 #0B6E4F90;
+    rotate: 20deg;
+  }
+
+  50% {
+    rotate: -20deg;
+  }
+
+  75% {
+    box-shadow: 0 0 0 10px #0B6E4F60;
+  }
+
+  100% {
+    box-shadow: 0 0 0 13px #0B6E4F30;
+    rotate: 0;
+  }
 }

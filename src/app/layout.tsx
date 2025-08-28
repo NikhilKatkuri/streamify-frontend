@@ -1,129 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AppProviders from "@/context";
+import { baseMetadata } from "@/lib/metadata";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
-const url: string = "http://localhost:3000";
-
-export const metadata: Metadata = {
-  title: {
-    default: "Streamify - Collaborative Music Streaming",
-    template: "%s | Streamify",
-  },
-  description:
-    "Transform music into a shared social experience with Streamify. Create virtual rooms, listen together in real-time with friends, and enjoy synchronized playback across all devices. Chat, react, and connect through music.",
-  keywords: [
-    "music streaming",
-    "collaborative listening",
-    "synchronized playback",
-    "virtual music rooms",
-    "social music",
-    "group listening",
-    "real-time music",
-    "music chat",
-    "shared playlists",
-    "music together",
-    "streaming platform",
-    "music social network",
-  ],
-  authors: [{ name: "Streamify Team" }],
-  creator: "Streamify",
-  publisher: "Streamify",
-  applicationName: "Streamify",
-  category: "Music & Entertainment",
-  classification: "Music Streaming Platform",
-
-  // Open Graph metadata
-  // openGraph: {
-  //   type: "website",
-  //   locale: "en_US",
-  //   url: url,
-  //   siteName: "Streamify",
-  //   title: "Streamify - Listen Together, Stay Connected",
-  //   description:
-  //     "Create virtual music rooms and enjoy synchronized listening with friends worldwide. Real-time chat, reactions, and seamless playbook control.",
-  //   images: [
-  //     {
-  //       url: "/web-app-manifest-512x512.png",
-  //       width: 512,
-  //       height: 512,
-  //       alt: "Streamify - Collaborative Music Streaming Platform",
-  //     },
-  //     {
-  //       url: "/web-app-manifest-192x192.png",
-  //       width: 192,
-  //       height: 192,
-  //       alt: "Streamify App Icon",
-  //     },
-  //   ],
-  // },
-
-  // Twitter Card metadata
-  // twitter: {
-  //   card: "summary_large_image",
-  //   site: "@streamify",
-  //   creator: "@streamify",
-  //   title: "Streamify - Collaborative Music Streaming",
-  //   description:
-  //     "Listen together in real-time. Create rooms, invite friends, and enjoy synchronized music experiences.",
-  //   images: ["/web-app-manifest-512x512.png"],
-  // },
-
-  // App-specific metadata
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Streamify",
-    startupImage: [
-      {
-        url: "/web-app-manifest-192x192.png",
-        media:
-          "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
-      },
-      {
-        url: "/web-app-manifest-512x512.png",
-        media:
-          "(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
-      },
-    ],
-  },
-
-  /*
-  // Verification and security
-  verification: {
-    google: "google-site-verification-code", 
-  },
-*/
-  // Robots directive
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  // Additional metadata
-  alternates: {
-    canonical: url,
-  },
-
-  other: {
-    "mobile-web-app-capable": "yes",
-    "theme-color": "#000000",
-    "msapplication-TileColor": "#000000",
-    "msapplication-config": "/browserconfig.xml",
-  },
-};
+export const metadata: Metadata = baseMetadata;
 
 export default function RootLayout({
   children,
@@ -154,7 +42,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );
