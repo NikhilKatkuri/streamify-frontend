@@ -4,7 +4,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   variant: "filled" | "outlined";
 }
 
-function Input({ variant, ...props }: InputProps) {
+function Input({ variant, className = "", ...props }: InputProps) {
   return (
     <div className="w-full flex items-center justify-center">
       <input
@@ -12,9 +12,9 @@ function Input({ variant, ...props }: InputProps) {
         {...props}
         className={`border ${
           variant === "filled"
-            ? "border-transparent bg-thin-border-70"
-            : "border-white/30"
-        } outline-none focus:border-outline h-12 active:border-outline w-full rounded-md p-2`}
+            ? "border-transparent bg-white/5 hover:bg-white/10 focus:bg-white/10"
+            : "border-white/30 hover:border-white/50"
+        } outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 h-12 w-full rounded-lg p-2 transition-colors duration-200 placeholder:text-white/40 text-white ${className}`}
       />
     </div>
   );

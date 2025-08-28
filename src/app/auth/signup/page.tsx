@@ -115,7 +115,7 @@ function SignUp() {
               <div className="flex items-start gap-3 py-2">
                 <label className="cursor-pointer relative mt-1">
                   <input type="checkbox" className="peer hidden" />
-                  <span className="h-4 w-4 rounded border border-gray-500 flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary transition-all"></span>
+                  <span className="h-4 w-4 rounded-md border-2 border-white/30 flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary transition-all duration-200 hover:border-white/50"></span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -123,7 +123,7 @@ function SignUp() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="3"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="w-3 h-3 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-white hidden peer-checked:block absolute"
@@ -133,13 +133,13 @@ function SignUp() {
                 </label>
                 <span className="text-sm text-white/70 leading-relaxed">
                   I agree to the{" "}
-                  <Link href="/terms" className="text-primary hover:underline">
+                  <Link href="/terms" className="text-primary hover:text-lime-400 transition-colors duration-200">
                     Terms of Service
                   </Link>{" "}
                   and{" "}
                   <Link
                     href="/privacy"
-                    className="text-primary hover:underline"
+                    className="text-primary hover:text-lime-400 transition-colors duration-200"
                   >
                     Privacy Policy
                   </Link>
@@ -147,7 +147,7 @@ function SignUp() {
               </div>
 
               {/* Sign Up Button */}
-              <button className="w-full h-12 bg-primary hover:bg-lime-500 text-white font-medium rounded-md transition-all duration-200 active:scale-[0.98] mt-6">
+              <button className="w-full h-12 bg-gradient-to-r from-primary to-lime-500 hover:from-lime-500 hover:to-primary text-white font-medium rounded-lg shadow-lg shadow-primary/25 active:scale-95 transition-all ease-out duration-200 hover:shadow-xl hover:shadow-primary/30 mt-6">
                 Create Account
               </button>
 
@@ -164,12 +164,13 @@ function SignUp() {
               </div>
 
               {/* Google Sign Up */}
-              <button className="w-full py-3 rounded-lg flex items-center justify-center gap-3 border border-outline hover:shadow-md hover:bg-thin-border/30 transition-all duration-200 active:scale-[0.98]">
+              <button className="w-full py-3 rounded-lg flex items-center justify-center gap-3 border border-white/20 hover:border-white/30 hover:bg-white/5 active:scale-95 transition-all ease-out duration-200 group">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="20"
                   viewBox="0 0 24 24"
                   width="20"
+                  className="transition-transform duration-200"
                 >
                   <path
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -189,16 +190,16 @@ function SignUp() {
                   />
                   <path d="M1 1h22v22H1z" fill="none" />
                 </svg>
-                <span className="text-white/90">Continue with Google</span>
+                <span className="font-medium">Continue with Google</span>
               </button>
 
               {/* Login Link */}
               <div className="text-center pt-4 border-t border-thin-border">
-                <p className="text-sm text-white/70">
+                <p className="text-sm text-white/60">
                   Already have an account?{" "}
                   <Link
                     href="/auth/login"
-                    className="text-primary hover:underline font-medium"
+                    className="text-primary hover:text-lime-400 font-medium transition-colors duration-200"
                   >
                     Sign in
                   </Link>

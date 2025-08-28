@@ -84,6 +84,34 @@ body {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(132, 204, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(132, 204, 22, 0.5), 0 0 30px rgba(132, 204, 22, 0.3);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
 .auth-screen-bg-1{
   background: url('/images/photorealistic-view-tree-nature-with-branches-trunk.avif');
   background-repeat: no-repeat;
@@ -95,4 +123,16 @@ body {
   background-repeat: no-repeat; 
   background-size: cover; 
   background-position: center right;
+}
+.auth-welcome-screen-bg-1{
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('/images/ai-powered-device-concept.jpg');
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center; 
+}
+.auth-welcome-screen-bg-2{
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/images/musician-playing-piano-stage-generative-ai.jpg');
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center; 
 }
