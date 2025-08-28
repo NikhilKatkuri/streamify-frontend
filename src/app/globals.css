@@ -29,6 +29,7 @@
     transparent
   );
 }
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -43,6 +44,7 @@ body {
   --scrollbar-size-active: 10px;
   --scrollbar-gap: 4px;
 }
+
 ::-webkit-scrollbar {
   background: var(--scrollbar-color);
   width: var(--scrollbar-size);
@@ -80,4 +82,17 @@ body {
     box-shadow: 0 0 0 13px #0B6E4F30;
     rotate: 0;
   }
+}
+
+.auth-screen-bg-1{
+  background: url('/images/photorealistic-view-tree-nature-with-branches-trunk.avif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.auth-screen-bg-2{
+  background: url('/images/musician-playing-electric-guitar.avif');
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center right;
 }
