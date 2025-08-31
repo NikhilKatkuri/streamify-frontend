@@ -1,11 +1,14 @@
+'use client';
+import { useToast } from '@/context/ToastContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-function page() {
+function Login() {
+  const { addToast } = useToast();
   return (
     <div className="flex h-screen w-screen items-center justify-center">
-      <div className="mx-auto h-auto min-h-64 w-full flex-col rounded-lg border border-white/5 p-6 max-sm:max-w-[90%] sm:max-w-96">
+      <div className="mx-auto h-auto min-h-64 w-full max-w-96 flex-col rounded-lg border border-white/5 p-6 max-[500px]:max-w-[95%]">
         <div className="flex h-full w-full flex-col justify-center gap-3">
           <div className="flex w-full flex-col justify-center text-center">
             <Image
@@ -43,7 +46,12 @@ function page() {
                 </div>
               </div>
             </div>
-            <button className="transition-150 bg-primary mt-3 flex w-full items-center justify-center rounded-md py-2">
+            <button
+              onClick={() => {
+                addToast('Login successful', 'success');
+              }}
+              className="transition-150 bg-primary mt-3 flex w-full items-center justify-center rounded-md py-2"
+            >
               <span className="font-semibold text-white">Login</span>
             </button>
             <div className="my-4 flex w-full flex-col items-center gap-2">
@@ -71,7 +79,12 @@ function page() {
                 </span>
                 <div className="bg-Bg-level-2 h-1 w-full"></div>
               </div>
-              <button className="transition-150 mt-3 flex w-full items-center justify-center rounded-md border-2 border-white/10 py-2.5 hover:border-white/15">
+              <button
+                onClick={() => {
+                  addToast('Login successful', 'success');
+                }}
+                className="transition-150 mt-3 flex w-full items-center justify-center rounded-md border-2 border-white/10 py-2.5 hover:border-white/15"
+              >
                 <span className="mr-2 font-semibold text-white">
                   {' '}
                   <Image
@@ -92,4 +105,4 @@ function page() {
   );
 }
 
-export default page;
+export default Login;

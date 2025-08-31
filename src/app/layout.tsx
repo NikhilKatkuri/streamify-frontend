@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 // styles
 import '../styles/globals.css';
+import { ToastProvider } from '@/context/ToastContext';
+import ToastContainer from '@/components/common/ToastContainer';
 
 const onest = Onest({
   variable: '--font-onest',
@@ -25,7 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${onest.variable} antialiased`}>{children}</body>
+      <body className={`${onest.variable} antialiased`}>
+        <ToastProvider>
+          {children}
+          <ToastContainer />
+        </ToastProvider>
+      </body>
     </html>
   );
 }
