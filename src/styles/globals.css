@@ -12,9 +12,29 @@
   --color-Bg-level-1: var(--bg-level-1);
   --color-Bg-level-2: var(--bg-level-2);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 }
 
 body {
   color: var(--foreground);
   background: var(--bg-level-1);
+}
+
+button {
+  cursor: pointer;
+}
+
+.transition-150 {
+  @apply transition-all duration-150 ease-in-out;
+}
+.transition-250 {
+  @apply transition-all duration-250 ease-in-out;
+}
+.transition-350 {
+  @apply transition-all duration-350 ease-in-out;
+}
+
+button:active {
+  @apply scale-95;
 }
