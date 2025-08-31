@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="h-screen w-screen auth_bg flex items-center justify-center md:justify-end">
-      <div className="bg-[var(--auth-bar)] h-auto max-md:py-6 md:h-full w-full max-w-11/12 sm:max-w-[600px] flex items-center justify-center flex-col  max-md:rounded-md">
-        <div className="flex flex-col items-start gap-6 w-full px-6">
+      <div className="bg-[var(--auth-bar)] h-auto max-md:py-6 md:h-full w-full max-w-11/12 sm:max-w-[500px] md:max-w-[600px] flex items-center justify-center flex-col  max-md:rounded-md max-md:border max-md:border-foreground/30">
+        <div className="flex flex-col items-start gap-6 w-full max-sm:max-w-11/12 sm:max-w-[90%] max-md:mx-auto md:px-12">
           <div>
             <Link href="/" className="flex items-start gap-2 ">
               <span>
@@ -29,9 +29,50 @@ export default function Home() {
               </span>
             </Link>
           </div>
-          <div className="max-w-md">
-            <h1>Welcome Back</h1>
-            <p className="text-sm">Log in to Streamify and continue streaming, sharing, and connecting through music.</p>
+          <div className="max-w-sm">
+            <h1 className="font-bold text-lg text-white">Welcome Back</h1>
+            <p className="text-sm">
+              Log in to Streamify and continue streaming, sharing, and
+              connecting through music.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-3 w-full max-w-sm">
+            <div className="w-full">
+              <h1 className=" text-md  my-2">Email Address *</h1>
+              <div className="w-full">
+                <input
+                  type="text"
+                  className="w-full h-10 px-1 outline-0 border border-transparent rounded-md focus:border-foreground/20"
+                />
+              </div>
+            </div>
+            <div className="w-full">
+              <h1 className=" text-md  my-2">Password *</h1>
+              <div className="w-full relative">
+                <input
+                  type="text"
+                  className="w-full h-10 px-1 outline-0 border border-transparent rounded-md focus:border-foreground/20"
+                />
+                <div className="h-10 w-10  absolute right-0 top-0 flex items-center justify-center">
+                  <button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
