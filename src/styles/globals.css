@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+:root {
+  --bg-level-1: #08090a;
+  --bg-level-2: #121212;
+  --foreground: #b3b3b3;
+  --primary: var(--color-lime-600);
+  --secondary: var(--color-gray-600);
+}
+
+@theme {
+  --color-Bg-level-1: var(--bg-level-1);
+  --color-Bg-level-2: var(--bg-level-2);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--bg-level-1);
+}
